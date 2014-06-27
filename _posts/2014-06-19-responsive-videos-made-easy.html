@@ -1,0 +1,42 @@
+---
+layout: post
+title: Responsive videos made easy
+categories:
+- Tech
+tags:
+- audio
+- reponsive
+- responsive video
+- video
+status: publish
+type: post
+published: true
+meta:
+  _wpcom_is_markdown: '1'
+  _edit_last: '1'
+  _thumbnail_id: '2911'
+author:
+  login: basile
+  email: basile@basilesimon.fr
+  display_name: Basile Simon
+  first_name: Basile
+  last_name: Simon
+---
+<p>Github is definitely a nice place to be around. Following people leads to lucky discoveries.<br />
+This morning, <a href="http://twitter.com/padenot">Paul Adenot</a>, software engineer at Mozilla, and specialised in audio and video, <a href="https://github.com/padenot/talk-rich-media">published a new repo</a> with the content of his talk about rich audio and video on the web.</p>
+<p>The talk can be accessed at <a href="http://padenot.github.io/talk-rich-media/">this address</a>, and it's a short delight.</p>
+<p>While I was quickly going through it, I stumbled upon the slide about responsive videos without Javascript - and, of course, it rang a bell.</p>
+<p><strong>Basically, CSS media queries now work on the <code>&lt;video&gt;</code> element.</strong></p>
+<p>Without going through the codecs question (addressed earlier in the talk), you can add a media property to your HTML5 videos, like that:</p>
+{% highlight html %}
+<video controls>
+  <source src="retina.webm" media="(min-resolution: 300dpi)"></source>
+  <source src="desktop.webm" media="(min-device-width: 769px)"></source>
+  <source src="mobile.webm" media="(max-device-width: 769px)"></source>
+</video>
+{% endhighlight %}
+<p>Easy, right?<br />
+<a href="http://padenot.github.io/talk-rich-media/?full#source-media">Jump to the slide</a> to see a demo, that is quite impressive.</p>
+<p>That is <em>not</em> a revolution - and it's already a 2-year-old solution, but it is progress in terms of usability, simplicity, and weight.<br />
+No need for that fancy Javascript looking at your browser properties and running tests: <strong>it's all in your browser, right away</strong>.<br />
+<em>(Provided you use Firefox, for Chrome doesn't integrate this functionality yet.)</em></p>

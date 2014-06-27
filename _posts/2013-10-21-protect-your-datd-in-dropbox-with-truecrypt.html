@@ -1,0 +1,48 @@
+---
+layout: post
+title: How to protect your data in Dropbox with TrueCrypt
+categories:
+- Tech
+tags:
+- cloud encryption
+- dropbox
+- dropbox truecrypt
+- secure cloud
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+author:
+  login: basile
+  email: basile@basilesimon.fr
+  display_name: Basile Simon
+  first_name: Basile
+  last_name: Simon
+---
+<p><a href="http://journalism.basilesimon.fr/wordpress/wp-content/uploads/2013/10/Untitled.png"><img class="aligncenter size-full wp-image-2534" alt="Untitled" src="assets/Untitled.png" width="752" height="200" /></a></p>
+<p>Let's say I know somebody who needs privacy. Let's say he's far from his country, doing a PhD on something in between political sciences and media studies. Let's say that his research topic seems quite interesting to us Westerners... but could take him to jail in his country. And he wants to use Dropbox.</p>
+<p>My friend is right to be worried. Dropbox already showed weakness in the protection of our cloud-stored data. In 2011, for example, <a href="http://lifehacker.com/5813861/dropbox-accidentally-unlocked-all-accounts-for-4-hours">all the passwords were disabled for 4 hours</a> - meaning that a single email address was enough to log in to your account. Oops. And in September 2013, Mathew J. Schwartz, a security journalist for InformationWeek, raised doubts after he proved that each and every document stored on Dropbox was <a href="http://www.informationweek.com/security/client/dropbox-responds-to-security-flap/240161362">opened by an Amazon instance</a> with Libre Office, for preview-generating puroposes, Dropbox told him.</p>
+<p>Honestly, the list of vulnerabilities of your data in the cloud could go on for a long time. But that is not the point.<br />
+Storing something is taking a risk for somebody to find it. You can be tortured to be forced to reveal an information you stored in your memory. One can break into your flat to steal the passwords you wrote on a post-it. One can break into your computer's hard drive in order to steal your data. And of course, one can break into the cloud which contains your data. The cloud is just another risk, get over it. Just protect your data and enjoy its convenience.</p>
+<p style="text-align: center;">__________</p>
+<p>The solution I use and recommend is TrueCrypt, one of the most popular encryption tools available - and it's open source! And the advice I have for you is to abuse of its power. It can be <a href="http://www.truecrypt.org/downloads">downloaded for free</a> and works on Windows, Mac OS and Linux.<br />
+TrueCrypt is used to create encrypted volumes and containers, meaning that a key is necessary to decrypt and read the documents stored in the container. This protection is AES-256, which is a hash algorithm - way better than a password-protected zip file of pdf.</p>
+<p>How secure is it? Well, the NSA considers the AES-256 encryption "sufficient to protect classified information up to the Top Secret level", says <a href="http://www.truecrypt.org/docs/aes#Y0">TrueCrypt's website</a>.</p>
+<p>Here's how you proceed:</p>
+<ol>
+<li>Download TrueCrypt</li>
+<li>Create an encrypted container in your Dropbox folder<br />
+/home/basile/Dropbox for me for example. NB: this volume"s size needs to be inferior to your Dropbox capacity, e.g. 2Gb out of the box.</li>
+<li>No step 3.</li>
+</ol>
+<p>And here you are: done!<br />
+A few things to know and remember:</p>
+<ol>
+<li>If you lose your password, you will never see your files again.</li>
+<li>You will need to mount the encrypted folder in order to access your files. Hence, TrueCrypt must be installed on the computer you are using to access them.</li>
+<li>You shall never open the encrypted volume at two different places. Don't leave it mounted on your computer at thome if you want to access it in the library.</li>
+<li>Don't forget your password.</li>
+</ol>
+<p>Now your files are securely stored in Dropbox's cloud. Nobody will be able to access them without your password.<br />
+Note that this solution does not protect the data stored on your computer.</p>

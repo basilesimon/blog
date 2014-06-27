@@ -1,0 +1,45 @@
+---
+layout: post
+title: ! 'DDJ project: migrations in Europe'
+categories:
+- Data visualization
+- Journalism
+tags:
+- datajournalism
+- ddj
+- immigration
+- migration flows
+- migrations europe
+- uk immigrants
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _thumbnail_id: '2781'
+author:
+  login: basile
+  email: basile@basilesimon.fr
+  display_name: Basile Simon
+  first_name: Basile
+  last_name: Simon
+---
+<p style="text-align: center;"><a href="http://basilesimon.fr/projects/immigration/index.html"><img class=" wp-image-2781 aligncenter" alt="Screen Shot 2014-02-10 at 12.59.57" src="assets/Screen-Shot-2014-02-10-at-12.59.57.png" width="594" height="333" /></a></p>
+<p>I'm glad to be back, and with some good news.</p>
+<p>Michael and I published a data-journalism project about the <a href="http://basilesimon.fr/projects/immigration/index.html">flows of migration in Europe</a>. The idea came from Michael, one night in our favourite pub. We drew the first sketches on the back of a bill, analogue-style.</p>
+<p>The project is basically a compilation of public data from the national offices of statistics of ten European countries, and aims to paint a more precise picture of migrations on our continent.</p>
+<p>It was the occasion for me stick my toes into Javascript for the first time, through the Canvas.js library, as I was just completing the Codecademy's JS course at the moment.</p>
+<p>Still, many problems we had were caused by the library and by my limited skills in Javascript.<br />
+For example, the arrows appearing when hovering the countries are PNG images, and not dynamically drawn SVGs. Nope, they're just stupid images refreshed with this small function</p>
+<pre>          var dataPoints = chart.options.data[0].dataPoints;
+          for(var i = 0; i &lt; dataPoints.length; i++){
+            dataPoints[i].mouseover = updateBackgroundImage;
+           }
+          function updateBackgroundImage(e){
+          document.getElementById('chartContainer').style.backgroundImage = 
+          "url('" + e.dataPoint.imageUrl + "')";          
+          }</pre>
+<p>Aligning them was quite a pain in the neck - as one can see when looking at the CSS. And let's not talk about the home-made responsiveness.</p>
+<p>But in the end, the project may look like more hacking than proper development, but it works. And it works quite well, indeed!<br />
+Showing it around allowed me to join the BBC News Lab, as well as the Centre for Investigative Journalism to work with Paul Bradshaw, and will maybe get Michael and I an internship in a well known and respected paper - that I'll not name here to avoid jinxing us.</p>
+<p>The only regret we have is neglecting the journalism side of the story. We focused a lot of our efforts into the look and feel of the page, as well as the gathering of the data, and did not take the time to write a good story with an appealing angle.</p>

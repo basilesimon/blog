@@ -1,0 +1,114 @@
+---
+layout: post
+title: Surfacing important news for a company with Yahoo Finance API and d3.js (part
+  1)
+categories:
+- Data visualization
+- Tech
+tags:
+- api
+- d3
+- d3.js
+- data visualization
+- graph
+- yahoo
+- yahoo finance
+status: trash
+type: post
+published: false
+meta:
+  _wp_trash_meta_status: publish
+  _wpcom_is_markdown: '1'
+  _edit_last: '1'
+  _thumbnail_id: '2854'
+  _wp_trash_meta_time: '1402051358'
+  _wp_trash_meta_comments_status: a:3:{i:266;s:1:"1";i:286;s:4:"spam";i:292;s:4:"spam";}
+author:
+  login: basile
+  email: basile@basilesimon.fr
+  display_name: Basile Simon
+  first_name: Basile
+  last_name: Simon
+---
+<p>There are quite a few things I'm working on at the moment, but they all come down to a set of <em>goals</em> or <em>questions</em> I have:</p>
+<ul>
+<li><strong>Can I surface information better?</strong></li>
+<li><strong>Can I give a more accurate and simple picture of a story's background?</strong></li>
+</ul>
+<p>Hence my interest for data stringers and computer-assisted reporting.</p>
+<p>Coming down to this blog post, about a simple combination of APIs and d3.js enabling the user (a journalist or a reader) to understand better a situation, in a glance.</p>
+<p><strong>I'm going to go through a simple way to display a chart of a company, and to add some visual indicators of important changes in this company's market value.</strong> All that, step by step.</p>
+<p>For doing that efficiently, we need a couple of things:</p>
+<ul>
+<li>The company's value, stored somewhere or queried dynamically (part 1)</li>
+<li>A d3 chart representing this value (part 2)</li>
+<li>A couple of inputs for the user to customize the results (part 3)</li>
+<li>And a way to detect <em>important</em> changes. (part 4)</li>
+</ul>
+<p>Prerequisites:<br />
+It is my ambition to make technological solutions more accessible, hence these tutorial-ish articles. You don't need much to complete them, but I strongly advise against copy-pasting like an idiot. For obvious reasons, take the time to read the code, to understand it, and, more important, to understand why you are using this and that.<br />
+Basics in HTML and Javascript are required, just to understand the difference between a <code>variable</code> and a <code>function</code>, for example.<br />
+I voluntarily will not post full gists of the page we are creating, at least until the end of this tutorial. It's up to you to re-write the code and to put things in the right place. Again, use the comment section if you have questions.</p>
+<hr />
+<h4>Part 1: Getting a company's value history with Yahoo Finance</h4>
+<p>We are looking at a way to get historical for stock quotes, and we are lucky, because Yahoo! Finance allows us to do that - for free.<br />
+Yahoo! has its own language to communicate with its APIs, the <a href="https://developer.yahoo.com/yql/">Yahoo! Query Language</a>, which is fairly straightforward to understand.</p>
+<p>For this example, we want to get data out of Yahoo! stored in a JSON, about, let's say, Apple, between January 1st, 2013, and January 1st, 2014.<br />
+You can head to the <a href="http://developer.yahoo.com/yql/console">Yahoo! Console to try things out</a>, and then continue when you're ready.<br />
+The query we want will look like that:</p>
+<pre>http://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol in ("AAPL") and startDate = "2013-01-01" and endDate = "2014-01-01"&amp;env=http%3A%2F%2Fdatatables.org%2Falltables.env&amp;format=json
+</pre>
+<p>Because you read carfully this query, you noted that we used <em>AAPL</em>, and not <em>Apple</em> for our query. That is because this API requires the symbol of the company. You can use <a href="http://finance.yahoo.com/lookup">Yahoo! Symbol Finder</a> if you are not sure. As an example, Apple is <em>AAPL</em>, Facebook is <em>FB</em>, Yahoo is <em>YHOO</em>, Microsoft is <em>MSFT</em>.<br />
+Paste this URL in your browser, and, <em>voilà</em>, you've got a nice JSON file of this form:</p>
+<pre>{
+  query: {
+  count: 252,
+  created: "2014-05-08T11:17:28Z",
+  lang: "en-US",
+  results: {
+  quote: [
+    {
+      Symbol: "AAPL",
+      Date: "2013-12-31",
+      Open: "554.17",
+      High: "561.28",
+      Low: "554.00",
+      Close: "561.02",
+      Volume: "7967300",
+      Adj_Close: "557.68"
+    },
+    {
+      Symbol: "AAPL",
+      Date: "2013-12-30",
+      Open: "557.46",
+      High: "560.09",
+      Low: "552.32",
+      Close: "554.52",
+      Volume: "9058200",
+      Adj_Close: "551.22"
+    },
+(...)
+</pre>
+<p><em>Remark: This is only a pre-set query. We will want later to be able to customise the results according to user inputs. We will go through that in part 3. Spoiler alert: it is really easy to do.</em></p>
+<p>Now we want <strong>to query it in the browser directly</strong>. For that, I will beg for your forgiveness, but I will recommend jQuery, because the <code>$.getJSON()</code> method is incredibly simple to use.<br />
+Stop checking Reddit every ten seconds, open up your favourite text editor, create a new HTML file, and between two <code>&lt;script&gt;</code> tags, use something similar to that:</p>
+<pre>
+var myQuery = "http://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.historicaldata where symbol in ("AAPL") and startDate = "2013-01-01" and endDate = "2014-01-01"&env=http%3A%2F%2Fdatatables.org%2Falltables.env&format=json";
+var data = $.getJSON(myQuery, foo);
+function foo(data) {
+  console.log(data);
+}
+</pre>
+<p>Now, what the heck did you just write?</p>
+<ul>
+<li>The <code>myQuery</code> variable contains the query we wrote previously (and that we are eventually going to customize).</li>
+<li>The <code>data</code> variable is the querying itself to Yahoo! services, with the help of <code>getJSON</code> jQuery method. It takes two arguments:
+<ul>
+<li>the query</li>
+<li>and a function where to send the collected data (a fallback)</li>
+</ul>
+</li>
+<li>The <code>foo</code> thing is our fallback, a function in which we are going to do stuff with the data. In that case, we just log in the console the result of our query.</li>
+</ul>
+<hr />
+<p>That was easy, right? You now have a Javascript Object ready to be used and tweaked. Have fun with different values for this query until part 2 comes up - where we will look for a way to represent graphically the results we just got.</p>
