@@ -1,47 +1,22 @@
 ---
 layout: post
 title: Draw simple maps with no effort with d3.js and datamaps.js
-categories:
-- Data visualization
-tags:
-- d3.js
-- data visualization
-- datajournalism
-- datamaps
-- dataviz
-- map
-- mapping
-- same-sex marriage
-status: publish
-type: post
-published: true
-meta:
-  _wpcom_is_markdown: '1'
-  _edit_last: '1'
-  _thumbnail_id: '2841'
-author:
-  login: basile
-  email: basile@basilesimon.fr
-  display_name: Basile Simon
-  first_name: Basile
-  last_name: Simon
 ---
 <p>I started working on a new project for BBC News Labs this morning, and that project heavily relies  on a map. After spending these last months working around Javascript and the famous datavisualisation library <a href="http://d3js.org">d3.js</a>, my first reflex was to jump on d3.</p>
 <p>However, the one first I find the hardest with d3 is to find tutorials to <strong>learn how to d3.</strong></p>
 <p>So this morning, when coming across <em>topoJSON</em>, <em>geoson</em> and other formats, phew, it was hard. The plan was to create a simple world map template that I could reuse later with many different datasets. Then, I discovered <a href="http://datamaps.github.io/">DataMaps</a>, a light JS library to create "<em>customizable SVG map visualisations for the web in a single Javascript file using D3.js</em>". Sounded cool.</p>
 <p>DataMaps is in fact really easy to set up, with a classic constructor to fill with options. At the moment, and without too much exploration, I find some limitations to it (for example, loading data from an external file, or the format of the data required), but hey, that's a quick and simple solution.</p>
 <p>In a handful of minutes, just throw in your <head> and you're good to go.</p>
-<pre>
+{% highlight html %}
 <script src="d3.min.js"></script>
 <script src="topojson.v1.min.js"></script>
 <script src="datamaps.js"></script>
-</pre>
+{% endhighlight %}
 <p>Then fill in the constructor with options from <a href="https://github.com/markmarkoh/datamaps/blob/master/README.md#getting-started">DataMaps Docs</a> and set up your first d3 map!</p>
-<pre>
+{% highlight javascript %}
   // Getting the container's dimensions
   var width = document.getElementById('container').offsetWidth;
   var height = document.getElementById('container').offsetHeight;
-
   // Datamap constructor, fill in the options from the docs
   var map = new Datamap({
     element: document.getElementById('container'),
@@ -79,7 +54,7 @@ author:
       return {path: path, projection: projection};
     }
   });
-</pre>
+{% endhighlight %}
 <p>This library is really handy and easy to get started with, that is definitely a product I'll reuse when I'll be in a rush and need a small map.</p>
 <p>As an example, here is a <em>quick</em> map of countries accepting same-sex marriage, as of 29 March 2014 (the USA are a bit more complex than that, but I included them anyway).</p>
 <p>Oh, and did I tell you that the maps are <strong>responsive</strong>? That's a huge plus.</p>

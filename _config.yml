@@ -8,7 +8,7 @@ permalink:        pretty
 # Setup
 title:            Blog
 tagline:          Data, hackery, stories
-url:              http://journalism.basilesimon.fr
+url:              http://localhost:4000
 paginate:         1
 baseurl:          /
 author:
