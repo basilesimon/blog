@@ -8,7 +8,7 @@ permalink:        pretty
 # Setup
 title:            Blog
 tagline:          Data, hackery, stories
-url:              http://journalism.basilesimon.fr 
+url:              http://journalism.basilesimon.fr
 description:      Basile Simon
 paginate:         1
 baseurl:          /
@@ -16,6 +16,7 @@ author:
   name:           Basile Simon
   url:
   email:          basile@basilesimon.fr
+local:            localhost:4000
 
 # Custom vars
 version:          1.0.0
