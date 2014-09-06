@@ -8,7 +8,7 @@ permalink:        pretty
 # Setup
 title:            Blog
 tagline:          Data, hackery, stories
-url:              http://journalism.basilesimon.fr
+url:              http://blog.basilesimon.fr
 description:      Basile Simon
 paginate:         1
 baseurl:          /
@@ -26,6 +26,6 @@ projects:         http://projects.basilesimon.fr
 
 # FTP
 ftp_host:	'ftp.basilesimon.fr'
-ftp_dir:	'journalism'
+ftp_dir:	'blog'
 ftp_passive:	false
 
