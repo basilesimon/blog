@@ -1,4 +1,4 @@
-d3.csv("http://localhost:4000/assets/scripts/airpower-statistics.csv", function(data) {
+d3.csv("http://blog.basilesimon.fr/assets/scripts/airpower-statistics.csv", function(data) {
   var airpowerStatisticsChart = dc.barChart("#weapons-release");
 
   var ndx = crossfilter(data);

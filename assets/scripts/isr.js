@@ -1,4 +1,4 @@
-d3.csv("http://localhost:4000/assets/scripts/isr.csv", function(data) {
+d3.csv("http://blog.basilesimon.fr/assets/scripts/isr.csv", function(data) {
   var isrChart= dc.barChart("#isr-sorties");
 
   var ndx = crossfilter(data);
