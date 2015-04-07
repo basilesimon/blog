@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-##Basile Simon
+#Basile Simon
 
 <img src="http://basilesimon.fr/img/avatar.jpg" width="300px" align="left" style="padding-right:1em;"/>
 
