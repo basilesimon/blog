@@ -8,7 +8,7 @@ permalink:        pretty
 # Setup
 title:            Blog
 tagline:          Data, hackery, stories
-url:              http://178.62.217.87/blog
+url:              http://blog.basilesimon.fr
 description:      Basile Simon
 paginate:         1
 baseurl:          /
@@ -23,3 +23,9 @@ version:          1.0.0
 github:           https://github.com/basilesimon
 twitter:          https://twitter.com/basilesimon
 projects:         http://projects.basilesimon.fr
+
+# FTP
+ftp_host:	'ftp.basilesimon.fr'
+ftp_dir:	'blog'
+ftp_passive:	false
+
