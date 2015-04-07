@@ -11,7 +11,7 @@ tagline:          Data, hackery, stories
 url:              http://blog.basilesimon.fr
 description:      Basile Simon
 paginate:         1
-baseurl:          "/blog"
+baseurl:          "/blog/"
 author:
   name:           Basile Simon
   url:
