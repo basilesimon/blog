@@ -5,7 +5,7 @@ title: On Github - the datajournalists' toolbox
 
 A couple of months ago, I started a Github repo named *"[The Datajournalists' Toolbox](https://github.com/basilesimon/datajournalists-toolbox)"* to share with others the tool I use on a regular basis. 
 
-![screenshot]({{ site.url }}/assets/ddj-toolbox.png)
+![screenshot]({{ site.baseurl }}/assets/ddj-toolbox.png)
 
 Let's face it, some of them are quite awesome, and *sharing is caring*, they say. 
 
