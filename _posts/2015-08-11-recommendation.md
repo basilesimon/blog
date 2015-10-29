@@ -46,3 +46,9 @@ Now, of course, there's a limit, [outlined by Lis Howell](https://www.opendemocr
 I agree. Public service, public interest, and our mission as journalists is also to push important things in front of the audience.
 
 There are things everybody ought to know, after all.
+
+--- 
+
+**Edit 21st August 2015:**
+
+Check out this article from Michael Skelton about the new BBC Homepage: [Pick your own mix with customisation](http://www.bbc.co.uk/blogs/internet/entries/f2a81462-e119-444f-8d5a-dbbd2c6b2871)
