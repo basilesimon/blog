@@ -9,7 +9,7 @@ title: About
 
 Hacker-journalist at [BBC News Labs](http://twitter.com/BBC_News_Labs), working on Linked Data and datajournalim projects. Sort of.
 
-Data-journalist at [Airwars.org](http://airwars.org), monitoring coalition strikes against DAESH and claims of civilian casualties.
+Data-journalist at [Airwars.org](http://airwars.org), monitoring coalition strikes against Daesh and claims of civilian casualties.
 
 I fancy data, coding, web-design, and Belgian beers. Also, all things drones, infosec, natsec.
 
