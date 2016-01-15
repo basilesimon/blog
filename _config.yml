@@ -31,3 +31,4 @@ ftp_host:	'ftp.basilesimon.fr'
 ftp_dir:	'blog'
 ftp_passive:	false
 
+keep_files: ["assets"]
