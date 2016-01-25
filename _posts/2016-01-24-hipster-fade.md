@@ -5,7 +5,7 @@ title: Playing with the hipster fade
 
 Some photos from our New Year's trip to Marseille, on France's south coast.
 
-Mandatory matte fade effect, 'cause I wear rounded glasses, sport beard and ride a fixie.
+Mandatory matte fade effect, 'cause I wear rounded glasses, sport a beard and ride a fixie.
 
 ***
 
