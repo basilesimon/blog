@@ -1,6 +1,6 @@
 ---
 layout: post
-title: journocoders blah
+title: Thoughts on the Journocoders meetup, one year on
 ---
 
 <img src="http://www.journocoders.com/img/logo.png" style="margin: auto">
@@ -12,6 +12,8 @@ Every month, we go through a tutorial explaining practically a different bit of 
 The [list of topics we covered](http://www.journocoders.com) during this year goes from command line basics, cleaning data with Open Refine, d3 and charts things, API wrangling, mapping, Twitter bots, and scraping.
 
 Our format is very much hands-on: aside from introducing what we're going to do and a little show-and-tell at the beginning, the session mostly runs itself as the attendees go through the tutorial on their own. We encourage people to try to find the solution to their problem by asking their neighbour (or us) for help.
+
+Here are some thoughts on this experience.
 
 ---
 
@@ -41,7 +43,7 @@ And that there might be yet another set of things to figure out at an event, in 
 
 Since the very beginning, we've ran the meetup this way: every month, a new tutorial and a new skill under your belt.
 
-After a year, we got the opportunity to come back to some of these and dive a bit deeper: our first event was about "Scraping with Python," and we proposed an episode two last month ; after an intro do d3 in September last year, we just came back to this vast topic to have a look at how to create maps.
+After a year, we got the opportunity to come back to some of these and dive a bit deeper: our first event was about "Scraping with Python," and we proposed an episode two last month ; after an intro to d3 in September last year, we just came back to this vast topic to have a look at how to create maps.
 
 This diversity is awesome for those who come regularly and thus get the full spectrum of the topics we choose. But let's face it, not all of our members come regularly. Some cherry-pick topics, some join us along the way. I'd say that only very few attended all of them.
 
@@ -51,7 +53,7 @@ And this is quite a big issue for us in terms of learning impact.
 
 # How to fix?
 
-* Promote the attendance of many events in order to get the full experience and the diversity of our offering
+* Encourage people to come more often, rather than cherry-picking subjects
 * Encourage members to re-use what they've learned every month for at least one small project
 * Find or create a large tutorial explaining how to set up a laptop running Windows, Mac OS, or Linux
 * Keep going :)
