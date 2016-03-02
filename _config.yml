@@ -24,7 +24,7 @@ local:            localhost:4000
 version:          1.0.0
 github:           https://github.com/basilesimon
 twitter:          https://twitter.com/basilesimon
-projects:         http://projects.basilesimon.fr
+projects:         http://basilesimon.fr
 
 # FTP
 ftp_host:	'ftp.basilesimon.fr'
