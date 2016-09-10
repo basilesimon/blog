@@ -39,4 +39,8 @@ Their recommendation? Turning on the post-unsubscribe email acknowledging the un
 
 In the meantime, anybody who gets an email from a MailChimp list can grab the URL at the bottom, keep only the `u=` and `id=` parameters, and screw around with your list.
 
+All you can do is tick this box in your settings:
+
+![]({{ site.baseurl }}/assets/mailchimp.png)
+
 Not cool.
