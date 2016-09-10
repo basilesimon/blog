@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "On 'hacking the newsroom'"
 ---
 Earlier this month, I joined a panel at the International Journalism Festival in Perugia, titled "Hacking the Newsroom." "Exploring the ways hackers and journalists are working together, and how hacker-journalists are spreading into newsrooms," said the brochure summary.
