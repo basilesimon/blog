@@ -7,7 +7,7 @@ title: About
 
 <img src="http://basilesimon.fr/img/avatar.jpg" width="300px" align="left" style="padding-right:1em;"/>
 
-I'm a hacker-journalist at [BBC News Labs](http://bbcnewslabs.co.uk), working on new journalism formats and things. Sort of.
+I'm a newsroom developer at [The Times and Sunday Times](http://thetimes.co.uk), working on bespoke interactive contentand data nerdery. Sort of.
 
 I'm also chasing bugs and designing the datasets at [Airwars.org](http://airwars.org), monitoring anti-Daesh Coalition strikes and claims of civilian casualties.
 
