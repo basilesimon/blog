@@ -5,11 +5,13 @@ title: About
 
 # Hi
 
-<img src="http://basilesimon.fr/img/avatar.jpg" width="300px" align="left" style="padding-right:1em;"/>
+<img src="https://basilesimon.fr/img/prof.jpg" width="300px" align="left" style="padding-right:1em;"/>
 
 I'm a newsroom developer at [The Times and Sunday Times](http://thetimes.co.uk), working on bespoke interactive contentand data nerdery. Sort of.
 
 I'm also chasing bugs and designing the datasets at [Airwars.org](http://airwars.org), monitoring anti-Daesh Coalition strikes and claims of civilian casualties.
+
+And I'm a visiting lecturer in Interactive Journalism at City University, London.
 
 I fancy data, coding, the internets, and Belgian beers. Also, all things drones, infosec and natsec.
 
