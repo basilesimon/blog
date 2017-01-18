@@ -20,34 +20,34 @@ title: Cycling II
   <div id="line"></div>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.4.1/d3.min.js"></script>
   <script type="text/javascript">
-    const w = document.getElementsByClassName("content")[0].clientWidth;
-    //const w = 600;
-    const h = 100;
-    const svg = d3.select("#line")
+    var w = document.getElementsByClassName("content")[0].clientWidth;
+    //var w = 600;
+    var h = 100;
+    var svg = d3.select("#line")
       .append("svg")
       .attr("width", w)
       .attr("height", h)
       .attr("id", "visualization");
-    const x = d3.scaleLinear().domain([0, 10]).range([0, w]);
-    const y = d3.scaleLinear().domain([0, 10]).range([10, h - 10]);
-    const line = d3.line()
+    var x = d3.scaleLinear().domain([0, 10]).range([0, w]);
+    var y = d3.scaleLinear().domain([0, 10]).range([10, h - 10]);
+    var line = d3.line()
       .x(function(d,i) {return x(i);})
       .y(function(d) {return y(d);})
       .curve(d3.curveNatural)
     // data is created inside the function so it is always unique
     let i=0;
     let repeat = () => {
-      const data = d3.range(11).map(function(){return Math.random()*10})
+      var data = d3.range(11).map(function(){return Math.random()*10})
       // Uncomment following line to clear the previously drawn line
       //svg.selectAll("path").remove();
       // Set a light grey class on old paths
       svg.selectAll("path").attr("class", "old");
-      const path = svg.append("path")
+      var path = svg.append("path")
         .attr("d", line(data))
         .attr("stroke", "darkgrey")
         .attr("stroke-width", "2")
         .attr("fill", "none");
-      const totalLength = path.node().getTotalLength();
+      var totalLength = path.node().getTotalLength();
       path
         .attr("stroke-dasharray", totalLength + " " + totalLength)
         .attr("stroke-dashoffset", totalLength)
