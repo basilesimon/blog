@@ -10,13 +10,12 @@
 
   <nav class="sidebar-nav">
     <a class="sidebar-nav-item{% if page.url == site.url %} active{% endif %}" href="{{ site.url }}">{% icon fa-home %} - Home</a>
-    <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ site.url }}/about">{% icon fa-user %} - About</a>
+    <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="https://basilesimon.fr/about/">{% icon fa-user %} - About</a>
   </nav>
   <div class="sidebar-item">
     {% icon fa-rss %} - <a href="{{ site.url }}/atom.xml">RSS feed</a><br>-<br>
     {% icon fa-github %} - <a href="{{ site.github }}">Github</a><br>
     {% icon fa-twitter %} - <a href="{{ site.twitter }}">@basilesimon</a><br>
-    {% icon fa-copy %} - <a href="{{ site.projects }}">List of projects</a>
   </div>
   <div class="sidebar-item">
     <p>
