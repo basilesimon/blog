@@ -27,7 +27,7 @@ French midfielder Morgan Schneiderlin's £24m fee seem little in comparison to O
 
 ![]({{ site.baseurl }}/assets/TransferWindow1.png)
 
-Inspired by [this WSJ piece about swing in US states](www.wsj.com/graphics/elections/2016/how-is-your-state-swinging/), we decided to try to flip the coordinates of a rather standard line chart, so to display it vertically.
+Inspired by [this WSJ piece about swing in US states](http://www.wsj.com/graphics/elections/2016/how-is-your-state-swinging/), we decided to try to flip the coordinates of a rather standard line chart, so to display it vertically.
 
 We decided to call them _Snakey charts_. And here's [an implementation of them in D3.js](https://bl.ocks.org/basilesimon/e72a435920fffaf2f88a74790e076320).
 
