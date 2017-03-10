@@ -11,14 +11,16 @@ permalink:        pretty
 title:            Blog - BS
 tagline:          Data, hackery, stories
 url:              https://blog.basilesimon.fr
-description:      Basile Simon
+description:      Basile Simon's blog about data, visual journalism, and cycling in London
 # paginate:         1
 # baseurl:          "/blog/"
 author:
   name:           Basile Simon
-  url:
   email:          basile@basilesimon.fr
+  twitter:        basilesimon
 local:            localhost:4000
+twitter:
+  username:       basilesimon
 
 # Custom vars
 version:          1.0.0
@@ -26,9 +28,7 @@ github:           https://github.com/basilesimon
 twitter:          https://twitter.com/basilesimon
 projects:         https://basilesimon.fr
 
-# FTP
-ftp_host:	'ftp.basilesimon.fr'
-ftp_dir:	'blog'
-ftp_passive:	false
+gems:
+  - jekyll-seo-tag
 
 keep_files: ["assets"]
