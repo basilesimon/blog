@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Open sourcing my MA in Interactive Journalism lecturing notes"
+description: "Open sourcing my notes and presentations for the MA in Interactive Journalism at City University"
 ---
 
 ![]({{ site.baseurl }}/assets/github-city.png)
