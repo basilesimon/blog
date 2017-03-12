@@ -148,9 +148,7 @@ Annotations in R are super simple, if only not so fancy.
 
 In this instance, we'll annotate a few of the industry codes to give a bit more life to the plot.
 
-Note that unless we add an interaction layer with tooltips and mouseovers with D3 later, this is everything the reader will see and read. It is good practice to assume the reader won't click or move their mouse about upon implementing tooltips and interactive features, but alas far too often neglected.
-
-So we'll go the simple and most effective way: by pointing out the interesting to them straight away.
+Note that unless we add an interaction layer with tooltips and mouseovers with D3 later, this is everything the reader will see and read. It is good practice to assume the reader won't click or move their mouse about upon implementing tooltips and interactive features anyway, so we'll go down the simple and most effective route: by pointing out what's interesting straight away.
 
 ```
 annotate("text", x = 29000, y = .05, label = "Construction and building") +
