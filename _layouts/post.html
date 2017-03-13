@@ -18,6 +18,10 @@ layout: default-unchecked
 </div>-->
 
 <div class="related">
+<div class="social-item">
+  <a href="{{ site.url }}/atom.xml">{% icon fa-rss %}</a>
+  <a href="{{ site.twitter }}">{% icon fa-twitter%}</a>
+</div>
 <h2>(un)related posts - <small>if you feel like reading more</small></h2>
 <ul class="related-posts">
     {% for post in site.related_posts limit:3 %}
