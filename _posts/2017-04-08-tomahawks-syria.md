@@ -2,6 +2,7 @@
 layout: post
 title: A (visual) history of the Tomahawk missile
 description: "A visual history of the largest bombings with Tomahawks missiles over Iraq, Syria, and Libya"
+image: "https://blog.basilesimon.fr/assets/tomahawks.png"
 ---
 
 ![]({{ site.baseurl }}/assets/tomahawks.png)
