@@ -12,7 +12,7 @@ layout: null
  <id>{{ site.url }}</id>
  <author>
    <name>{{ site.author.name }}</name>
-   <a href="http://twitter.com/basilesimon">@basilesimon</a>
+   <a href="https://twitter.com/basilesimon">@basilesimon</a>
  </author>
 
  {% for post in site.posts %}
