@@ -19,6 +19,7 @@ I invited Lisa, Nikki and Martin to come for this chat following my [teaser Niem
 
 ## Here is the reading list we compiled
 
+* ["Interactive Journalism - Hackers, Data, and Code"](https://www.press.uillinois.edu/books/catalog/53paw9sp9780252040511.html), Nikki Usher, 2016
 * ["Journalists, meet your new overlords: when nerds run the show"](https://www.journalismfestival.com/programme/2018/journalists-meet-your-new-overlords-when-nerds-run-the-show), will take place on Sat April 14th panel, Sala del Dottorato
 * ["In defense of unicorns"](https://medium.com/@chasedavis/in-defense-of-unicorns-4ae1c3cf74f1), Chase Davis, February 2014
 * [The New York Times Innovation report](https://www.scribd.com/doc/224608514/The-Full-New-York-Times-Innovation-Report), March 2014
