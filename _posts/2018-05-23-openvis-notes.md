@@ -9,7 +9,7 @@ description: "A fantastic edition of OpenVis, which took place in Paris. Machine
 
 This year, the [OpenVis conference](http://www.openvisconf.com/) took place in Paris. And it was awesome.
 
-Formerly Boston-based, OpenVis made the trip to France and set up shop next to the Tour Eiffel thanks to the support of EM Lyon business school (and of the sponsors), which supported Lynn's (?) desire to keep the conference alive.
+Formerly Boston-based, OpenVis made the trip to France and set up shop next to the Tour Eiffel thanks to the support of EM Lyon business school (and of the sponsors), which supported Lynn's  desire to keep the conference alive.
 
 Practitioners from around the world are surely grateful for what [Lynn and the committee](http://www.openvisconf.com/#program-committee) put together this year. I certainly am!
 
