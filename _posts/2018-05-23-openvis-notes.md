@@ -1,6 +1,6 @@
 ---
-layout:post
-title: "Notes from OpenVis 2018"
+layout: post
+title: Notes from OpenVis 2018
 image: "http://data.em-lyon.com/wp-content/uploads/2018/01/Screenshot-2018-01-23-11.13.54.png"
 description: "A fantastic edition of OpenVis, which took place in Paris. Machine learning, design, and WebGL galore were on the schedule."
 ---
