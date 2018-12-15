@@ -97,9 +97,17 @@ ggplot(substorms, aes(x = Longitude, y = Latitude, group = ID)) +
 
 ![]({{ site.baseurl }}/assets/worldmap1.png)
 
-Now let's add some styles
+Now let's add some styles. We also need to limit our map coordinates to Asia and the Pacific, and _voilà_.
 
-We also need to limit our map coordinates to Asia and the Pacific, and _voilà_.
+Edit December 2018: In order to prevent the odd clipping and horizonta lines from `coord_map()`, we need to clip the world map polygons ahead of rendering:
+
+```r
+wm <- map_data("world")
+
+library("PBSmapping")
+data.table::setnames(wm, c("X","Y","PID","POS","region","subregion"))
+worldmap <- clipPolys(wm, xlim=c(60,180),ylim=c(-20, 60), keepExtra=TRUE)
+```
 
 ```r
 theme_opts<-list(theme(panel.grid.minor = element_blank(),
@@ -115,7 +123,7 @@ theme_opts<-list(theme(panel.grid.minor = element_blank(),
                        plot.title = element_blank()))
                        
 ggplot(substorms, aes(x = Longitude, y = Latitude, group = ID)) + 
-  geom_polygon(data = map_data("world"), aes(x = long, y = lat, group = group), 
+  geom_polygon(data = worldmap, aes(x = X, y = Y, group = PID), 
                fill = "whitesmoke", colour = "gray10", size = 0.2) +
   geom_path(data = substorms, aes(group = ID), 
             alpha = substorms$Wind.WMO./500, size = 0.8,
@@ -132,18 +140,14 @@ ggplot(substorms, aes(x = Longitude, y = Latitude, group = ID)) +
 
 Now who doesn't like a good facetting? That's how I fell in love with `ggplot` in the first place. We can easily extract dates from our data in order to prepare for different facetting opportunities.
 
-Facetting by year allows us to visually (and relatively unreliably) compare years against each other. Doing the same operation by month will show when do typhoons mostly hit in the Pacific.
+Facetting by year allows us to visually (and relatively unreliably) compare years against each other. Doing the same operation by month will show when do typhoons mostly hit in the Pacific. (Edit December 2018: we now use `lubridate` functions to do so.)
 
 ```r
 # extract month and year for facetting later
-# *cough* use lubridate instead?
-iso.date <- unlist(lapply(
-  strsplit(substorms$ISO_time, " "),
-  function(x) x[1]))
+library(lubridate)
 substorms <- substorms %>%
-  mutate(Month = factor(substr(iso.date, 6, 7), 
-                        labels <- c(month.name))) %>%
-  mutate(Year = factor(substr(iso.date, 1,4)))
+  mutate(Month = month(as.Date(ISO_time))) %>%
+  mutate(Year = year(as.Date(ISO_time)))
 ```
 
 ```r
