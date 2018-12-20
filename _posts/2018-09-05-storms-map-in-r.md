@@ -99,7 +99,7 @@ ggplot(substorms, aes(x = Longitude, y = Latitude, group = ID)) +
 
 Now let's add some styles. We also need to limit our map coordinates to Asia and the Pacific, and _voilà_.
 
-Edit December 2018: In order to prevent the odd clipping and horizonta lines from `coord_map()`, we need to clip the world map polygons ahead of rendering:
+Edit December 2018: In order to prevent the odd clipping and horizontal lines from `coord_map()`, we need to clip the world map polygons ahead of rendering:
 
 ```r
 wm <- map_data("world")
