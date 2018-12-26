@@ -103,7 +103,7 @@ ggplot() +
 
 In the output SVG file, the country boundaries and the tracks are in separate `<g>` groups, and very easy to isolate. This makes plotting the result one group after the other, with two different pens, very easy. There's a video of the plotting below.
 
-![]({{ site.baseurl }}/assets/blog-map-final.JPG)
+![]({{ site.baseurl }}/assets/blog-map-final.jpg)
 
 <video width="500" autoplay nocontrols loop>
 <source src="https://giant.gfycat.com/ClearcutGrotesqueGoat.webm">
