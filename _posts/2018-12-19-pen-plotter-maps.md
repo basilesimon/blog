@@ -105,6 +105,6 @@ In the output SVG file, the country boundaries and the tracks are in separate `<
 
 ![]({{ site.baseurl }}/assets/blog-map-final.jpg)
 
-<video width="500" autoplay nocontrols loop>
+<video width="500" autoplay nocontrols loop muted src="https://giant.gfycat.com/ClearcutGrotesqueGoat.webm">
 <source src="https://giant.gfycat.com/ClearcutGrotesqueGoat.webm">
 </video>
