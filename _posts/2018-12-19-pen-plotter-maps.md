@@ -5,9 +5,9 @@ title: Pen plotter maps in R
 
 ![]({{ site.baseurl }}/assets/blog-map-final-group.JPG)
 
-I made a sweet Christmas present for my friend Clément, who cycles far too much. He got himself a nice custom bicycle made and started [documenting his travels](https://github.com/Cgg/stayer-super-audax-prototype-road-log).
+I made a sweet Christmas present for my friend Clément, who cycles far too much. Last year he got himself a nice custom bicycle made and started [documenting his travels](https://github.com/Cgg/stayer-super-audax-prototype-road-log).
 
-So I grabbed the lot and started playing, and I pen-plotted his journeys on postcards for him to send.
+So I grabbed the lot and started playing, and I pen-plotted his journeys on postcards.
 
 ---
 
@@ -51,7 +51,8 @@ Oh, and we need to assign a `group` variable to each unique path in order to be 
 paths <- data.frame()
 for (file in list.files("data/", pattern = "gpx", recursive = TRUE)) {
   print(file)
-  track_points <- rgdal::readOGR(paste("data/", file, sep = ""), layer = "track_points")
+  track_points <- rgdal::readOGR(paste("data/", file, sep = ""),
+                           layer = "track_points")
   track_points@data$time_clean <- ymd_hms(track_points@data$time)
   
   df1 <- data.frame(track_points@data)
@@ -78,15 +79,20 @@ for (file in list.files("data/", pattern = "gpx", recursive = TRUE)) {
 
 ## Visualising and plotting
 
+Easy as pie: our country boundaries are `polygons`, while the GPS tracks are `paths`, in `ggplot` world.
+
+Once happy with a general layout, exporting an SVG is trivial.
 
 ```r
 ggplot() +
-  geom_polygon(data = europeCoords, aes(x = long, y = lat, group = region),
-               colour = "#DDDDDD",
-	       fill = "#FFFFFF") +
-  geom_path(data = paths, aes(lon, lat, group = group),
-            colour="steelblue",
-	    alpha = 0.5) +
+  geom_polygon(data = europeCoords,
+    aes(x = long, y = lat, group = region),
+      colour = "#DDDDDD",
+      fill = "#FFFFFF") +
+  geom_path(data = paths,
+    aes(lon, lat, group = group),
+      colour="steelblue",
+      alpha = 0.5) +
   theme_opts  + 
   coord_map(projection = "mercator")
 ```
