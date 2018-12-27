@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Pen plotter maps in R
+image: "https://blog.basilesimon.fr/assets/blog-map-final-group.JPG"
+description: "Drawing Strava data on pen-plotter maps in R"
 ---
 
 ![]({{ site.baseurl }}/assets/blog-map-final-group.JPG)
