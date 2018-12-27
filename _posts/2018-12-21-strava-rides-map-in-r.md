@@ -1,17 +1,23 @@
 ---
 layout: post
 title: Strava rides map in R
+image: "https://blog.basilesimon.fr/assets/strava-map-final.jpeg"
+description: "Scraping Strava to map 10,000km of cycling with Python, R and ggplot"
 ---
 
 ![]({{ site.baseurl }}/assets/strava-map-final.jpeg)
 
+This is a Christmas present to myself to celebrate 10,000km of commuting on my bicycle: a lovely frame print of all my GPS traces on a home-made map of London. Here's how I made it.
+
+---
+
 ## Step one: getting Strava data
 
-The process is slightly convoluted since May 2018. In the past, the Strava archive used to contain all your activities as GPX; however, GDPR regulations [led to a change in bulk export format](https://support.strava.com/hc/en-us/community/posts/360014914631-Activities-in-the-new-bulk-export-feature-have-meaningless-names-and-multiple-formats-).
+The process is slightly convoluted since May 2018. In the past, you could download a Strava archive which used to contain all your activities as GPX; however, GDPR regulations [led to a change in bulk export format](https://support.strava.com/hc/en-us/community/posts/360014914631-Activities-in-the-new-bulk-export-feature-have-meaningless-names-and-multiple-formats-).
 
-[ Request your Strava archive ](https://www.strava.com/athlete/delete_your_account), wait for the email, download it.
+Anyway: [request your Strava archive](https://www.strava.com/athlete/delete_your_account), wait for the email, download it.
 
-From `activities.csv`, you can now scrape all the GPX files from your account. 
+`activities.csv` gives us a list of activities... which we can then scrape from our Strava account.
 
 ```
 $ cat activities/activities.csv | head -5
@@ -26,7 +32,7 @@ Clone [hugovk/strava-tools](https://github.com/hugovk/strava-tools), a set of Py
 
 Follow these before running `$ python download_fit_as_gpx.py`
 
-Here we are!
+Some time later... here we are!
 
 ```
 $ ls activities/activities | head -5
@@ -41,7 +47,7 @@ $ ls activities/activities | head -5
 
 ## Step two: Ingesting activities in R
 
-Install [ marcusvolz/strava ](https://github.com/marcusvolz/strava), an excellent suite of R functions that help us load activities in a (big, big) dataframe.
+Install [ marcusvolz/strava](https://github.com/marcusvolz/strava), an excellent suite of R functions that help us load activities in a (big, big) dataframe.
 
 ```r
 library(devtools)
@@ -119,6 +125,14 @@ ggplot() +
 
 ![]({{ site.baseurl }}/assets/strava-map-2.png)
 
+But behold, we can also get data straight from Open Street Map thanks to [osmdata](https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html). The syntax is relatively concise and OSM's web interface allows you to query features directly from there:
+
+![](https://i.gyazo.com/4f3440eea455f9f94ce42e46444cb838.gif)
+
+In our example, we grab all the parks in London and them use `geom_sf()` to represent both the `polygons` and `multipolygons` (the `osmdata`object [has plenty inside it](https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html#3_the_osmdata_object)). We need both polygons and multipolygons because, according to the OSM wiki:
+
+> Any area that is more complex than that (e.g., because its outline consists of several ways joined together, or because the area consists of multiple disjunct parts, or has holes) requires a _multipolygon_ relation. 
+
 ```r
 library(osmdata)
 parks2 <- opq(bbox = c(-0.41, 51.42, 0.08, 51.73)) %>%
@@ -141,6 +155,12 @@ ggplot() +
 ```
 
 ![]({{ site.baseurl }}/assets/strava-map-3.png)
+
+---
+
+Well, we're almost there. For this first draft I stopped at the map above, exported an SVG and sent that to the lab for printing.
+
+There is no limit to how much you can play with this data. One thing that really struck me was how imprecise my GPS tracking devices were in the City of London (despite being prosumer equipment). Below is a representation of one year of data, on which I've overlaid the OSM paths corresponding to the streets around Bishopsgate, Cheapside, Monument, Cannon Street, Aldgate, Smithfields, London Bridge and Blackfriars.
 
 ```r
 streets <- opq(bbox = c(-0.21, 51.47, 0.05, 51.61)) %>%
