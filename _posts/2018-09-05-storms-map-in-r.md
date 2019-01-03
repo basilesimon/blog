@@ -14,6 +14,8 @@ The north western Pacific basin sees many storms, and meteorology agencies relea
 
 Head to "data access" and make your way to the [CSV release](ftp://eclipse.ncdc.noaa.gov/pub/ibtracs/v03r10/all/csv/basin) for each oceanic basin. We need the western Pacific one.
 
+_This blog was contributed to [R Bloggers](https://www.r-bloggers.com/)_
+
 ---
 
 # Preparing data and basic mapping

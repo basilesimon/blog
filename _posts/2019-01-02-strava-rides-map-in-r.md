@@ -10,6 +10,8 @@ description: "Scraping Strava to map 10,000km of cycling with Python, R and ggpl
 
 This is a Christmas present to myself to celebrate 10,000km of commuting on my bicycle: a lovely frame print of all my GPS traces on a home-made map of London. Here's how I made it.
 
+_This blog was contributed to [R Bloggers](https://www.r-bloggers.com/)_
+
 ---
 
 ## Step one: getting Strava data

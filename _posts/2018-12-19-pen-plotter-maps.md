@@ -12,6 +12,8 @@ I made a sweet Christmas present for my friend Clément, who cycles far too much
 
 So I grabbed the lot and started playing, and I pen-plotted his journeys on postcards.
 
+_This blog was contributed to [R Bloggers](https://www.r-bloggers.com/)_
+
 ---
 
 ## Base map
