@@ -78,23 +78,23 @@ We can piece together a simple plot (besides throwing a caveman-like `plot(data)
 ```r
 library(ggplot2)
 theme_opts<-list(theme(panel.grid.minor = element_blank(),
-                       panel.background = element_blank(),
-                       plot.background = element_blank(),
-                       axis.line = element_blank(),
-                       axis.text.x = element_blank(),
-                       axis.text.y = element_blank(),
-                       axis.ticks = element_blank(),
-                       axis.title.x = element_blank(),
-                       axis.title.y = element_blank(),
-                       plot.title = element_blank(),
-                       panel.grid.major = element_line(colour = 'transparent'),
-                       legend.position = "none"))
+  panel.background = element_blank(),
+  plot.background = element_blank(),
+  axis.line = element_blank(),
+  axis.text.x = element_blank(),
+  axis.text.y = element_blank(),
+  axis.ticks = element_blank(),
+  axis.title.x = element_blank(),
+  axis.title.y = element_blank(),
+  plot.title = element_blank(),
+  panel.grid.major = element_line(colour = 'transparent'),
+  legend.position = "none"))
 
 ggplot(data, aes(lon, lat, group = id)) +
   geom_path(colour="steelblue", alpha = 0.2) + 
   coord_map(projection = "mercator", 
-            xlim = c(-0.41, 0.08), 
-            ylim = c(51.42, 51.73), clip = "on") +
+    xlim = c(-0.41, 0.08), 
+    ylim = c(51.42, 51.73), clip = "on") +
   theme_opts
 ```
 
@@ -112,14 +112,16 @@ thames.proj <- spTransform(thames, CRS("+proj=longlat +ellps=WGS84 +datum=WGS84 
 thames.df <- fortify(thames.proj)
 
 ggplot() +
-  geom_polygon(thames.df, mapping=aes(long, lat, group = group,
-                                      fill = I("skyblue")), alpha = 0.4) +
-  geom_path(data, mapping=aes(lon, lat, group = id,
-                              alpha = 0.9, color = I("tomato")),
-            size=1/3) +
+  geom_polygon(thames.df,
+   mapping=aes(long, lat, group = group,
+    fill = I("skyblue")), alpha = 0.4) +
+  geom_path(data,
+    mapping=aes(lon, lat, group = id,
+    alpha = 0.9, color = I("tomato")),
+    size=1/3) +
   coord_map(projection = "mercator",
-            xlim = c(-0.41, 0.08),
-            ylim = c(51.42, 51.73)) +
+    xlim = c(-0.41, 0.08),
+    ylim = c(51.42, 51.73)) +
   theme_opts
 ```
 
@@ -135,20 +137,27 @@ In our example, we grab all the parks in London and them use `geom_sf()` to repr
 
 ```r
 library(osmdata)
-parks2 <- opq(bbox = c(-0.41, 51.42, 0.08, 51.73)) %>%
-  add_osm_feature(key = 'leisure', value = "park") %>%
+parks2 <- opq(bbox = c(-0.41, 51.42,
+  0.08, 51.73)) %>%
+  add_osm_feature(key = 'leisure',
+    value = "park") %>%
   osmdata_sf()
 
 ggplot() +
-  geom_polygon(thames.df, mapping=aes(long, lat, group = group,
-                                      fill = I("skyblue")), alpha = 0.4) +
-  geom_sf(parks2$osm_polygons, mapping=aes(fill = I("springgreen4"),
-                                           color = I("transparent")), alpha = 0.4) +
-  geom_sf(parks2$osm_multipolygons, mapping=aes(fill = I("springgreen4"),
-                                                color = I("transparent")), alpha = 0.4) +
-  geom_path(data, mapping=aes(lon, lat, group = id,
-                              alpha = 0.9, color = I("tomato")),
-            size=1/3) +
+  geom_polygon(thames.df,
+   mapping=aes(long, lat, group = group,
+    fill = I("skyblue")), alpha = 0.4) +
+  geom_sf(parks2$osm_polygons,
+   mapping=aes(fill = I("springgreen4"),
+    color = I("transparent")),
+    alpha = 0.4) +
+  geom_sf(parks2$osm_multipolygons,
+   mapping=aes(fill = I("springgreen4"),
+   color = I("transparent")), alpha = 0.4) +
+  geom_path(data,
+  mapping=aes(lon, lat, group = id,
+   alpha = 0.9, color = I("tomato")),
+   size=1/3) +
   coord_sf(xlim = c(-0.41, 0.08),
            ylim = c(51.42, 51.73)) +
   theme_opts
@@ -163,22 +172,31 @@ Well, we're almost there. For this first draft I stopped at the map above, expor
 There is no limit to how much you can play with this data. One thing that really struck me was how imprecise my GPS tracking devices were in the City of London (despite being prosumer equipment). Below is a representation of one year of data, on which I've overlaid the OSM paths corresponding to the streets around Bishopsgate, Cheapside, Monument, Cannon Street, Aldgate, Smithfields, London Bridge and Blackfriars.
 
 ```r
-streets <- opq(bbox = c(-0.21, 51.47, 0.05, 51.61)) %>%
-  add_osm_feature(key = 'highway', value = "primary") %>%
+streets <- opq(bbox = c(-0.21, 51.47,
+  0.05, 51.61)) %>%
+  add_osm_feature(key = 'highway',
+  value = "primary") %>%
   osmdata_sf()
-streets2 <- opq(bbox = c(-0.21, 51.47, 0.05, 51.61)) %>%
-  add_osm_feature(key = 'highway', value = "secondary") %>%
+streets2 <- opq(bbox = c(-0.21, 51.47,
+  0.05, 51.61)) %>%
+  add_osm_feature(key = 'highway',
+  value = "secondary") %>%
   osmdata_sf()
-streets3 <- opq(bbox = c(-0.21, 51.47, 0.05, 51.61)) %>%
-  add_osm_feature(key = 'highway', value = "tertiary") %>%
+streets3 <- opq(bbox = c(-0.21, 51.47,
+  0.05, 51.61)) %>%
+  add_osm_feature(key = 'highway',
+  value = "tertiary") %>%
   osmdata_sf()
 
-+ geom_sf(streets$osm_lines, mapping=aes(fill = I("transparent"),
-          color = I("darkgray")), size = 0.5) +
-  geom_sf(streets2$osm_lines, mapping=aes(fill = I("transparent"),
-          color = I("darkgray")), size = 0.3) +
-  geom_sf(streets3$osm_lines, mapping=aes(fill = I("transparent"),
-          color = I("darkgray")), size = 0.1) 
++ geom_sf(streets$osm_lines,
+   mapping=aes(fill = I("transparent"),
+   color = I("darkgray")), size = 0.5) +
+geom_sf(streets2$osm_lines,
+   mapping=aes(fill = I("transparent"),
+   color = I("darkgray")), size = 0.3) +
+geom_sf(streets3$osm_lines,
+   mapping=aes(fill = I("transparent"),
+   color = I("darkgray")), size = 0.1) 
 ```
 
 ![]({{ site.baseurl }}/assets/strava-map-4.png)
