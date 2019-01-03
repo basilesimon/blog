@@ -13,11 +13,11 @@ This is a Christmas present to myself to celebrate 10,000km of commuting on my b
 
 ## Step one: getting Strava data
 
-The process is slightly convoluted since May 2018. In the past, you could download a Strava archive which used to contain all your activities as GPX; however, GDPR regulations [led to a change in bulk export format](https://support.strava.com/hc/en-us/community/posts/360014914631-Activities-in-the-new-bulk-export-feature-have-meaningless-names-and-multiple-formats-).
+The process has become slightly convoluted in May 2018. In the past, it was possible to download a Strava archive which contained all activities as GPX; however, GDPR regulations [led to a change in bulk export format](https://support.strava.com/hc/en-us/community/posts/360014914631-Activities-in-the-new-bulk-export-feature-have-meaningless-names-and-multiple-formats-).
 
 Anyway: [request your Strava archive](https://www.strava.com/athlete/delete_your_account), wait for the email, download it.
 
-`activities.csv` gives us a list of activities... which we can then scrape from our Strava account.
+`activities.csv` gives us a list of activities... which we can then scrape from Strava.
 
 ```
 $ cat activities/activities.csv | head -5
@@ -28,7 +28,7 @@ id,date,name,type,description,elapsed_time,distance,commute,gear,filename
 1992479540,2018-11-30 08:51:29,Morning Ride,Ride,"",1427,6563.0,true,Michel le fixie,activities/2130097780.fit.gz
 ```
 
-Clone [hugovk/strava-tools](https://github.com/hugovk/strava-tools), a set of Python tools to scrape Strava. There are some instructions at the top of `download_fit_as_gpx.py`.
+Clone [hugovk/strava-tools](https://github.com/hugovk/strava-tools), a set of Python tools to do automate interactions with Strava. There are some instructions at the top of `download_fit_as_gpx.py`.
 
 Follow these before running `$ python download_fit_as_gpx.py`
 
@@ -90,8 +90,9 @@ theme_opts<-list(theme(panel.grid.minor = element_blank(),
   panel.grid.major = element_line(colour = 'transparent'),
   legend.position = "none"))
 
-ggplot(data, aes(lon, lat, group = id)) +
-  geom_path(colour="steelblue", alpha = 0.2) + 
+ggplot(data,
+  aes(lon, lat, group = id)) +
+  geom_path(colour="steelblue",alpha = 0.2) + 
   coord_map(projection = "mercator", 
     xlim = c(-0.41, 0.08), 
     ylim = c(51.42, 51.73), clip = "on") +
