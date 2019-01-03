@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Strava rides map in R
+tags: r
 image: "https://blog.basilesimon.fr/assets/strava-map-final.jpeg"
 description: "Scraping Strava to map 10,000km of cycling with Python, R and ggplot"
 ---
