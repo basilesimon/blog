@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Mapping storms in R
+tags: r
 image: "https://blog.basilesimon.fr/assets/storms_final.png"
 description: "How to map 10 years of storms in the Pacific, with R and ggplot"
 ---
