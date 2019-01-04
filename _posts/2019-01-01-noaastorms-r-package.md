@@ -26,7 +26,7 @@ install_github("basilesimon/noaastorms")
 `getStorms`: Fetch NOAA historical best track storms data
 
 ```r
-> df <- getStorms('EP')
+> df <- getStorms(c('EP'))
 
 > head(df[1:5])
      Serial_Num Season Num Basin Sub_basin    Name
@@ -37,15 +37,28 @@ install_github("basilesimon/noaastorms")
 6 1902276N14266   1902  01    EP        MM UNNAMED
 ```
 
-**Argument**: A basin code from the list:
+The first argument is a vector of basin codes from this list:
 
--   NA: North Atlantic
--   SA: South Atlantic
--   NI: North Indian
--   SI: South Indian
--   EP: East Pacific
--   SP: South Pacific
--   WP: West Pacific
+* NA: North Atlantic
+* SA: South Atlantic
+* NI: North Indian
+* SI: South Indian
+* EP: East Pacific
+* SP: South Pacific
+* WP: West Pacific
+
+![NOAA basins map](https://www.ssd.noaa.gov/PS/TROP/TCFP/images/TCFP_basins.gif)
+
+To get storms that took place in the Atlantic for example, run `getStorms(c('NA', 'SA'))`.
+
+The second argument is a date range to filter data with. For example:
+
+```r
+dateRange <- c(as.Date('2010-01-01'), as.Date('2012-12-31'))
+getStorms(c('NA', 'SA'), dateRange = dateRange)
+```
+
+Will query storms that took place in the Atlantic in 2010 and 2012.
 
 
 ## Usage
@@ -62,7 +75,7 @@ worldmap <- clipPolys(wm,
   keepExtra=TRUE)
 
 # load storms for North Indian ocean
-spStorms <- getStorms('NI')
+spStorms <- getStorms(c('NA', 'SA'))
 
 ggplot(spStorms,
   aes(x = Longitude, y = Latitude,
@@ -78,11 +91,11 @@ ggplot(spStorms,
     ylim = c(0, 45)) 
 ```
 
-![Screenshot of storms](![img](https://github.com/basilesimon/noaastorms/blob/master/Rplot.png))
+![Screenshot of storms](https://github.com/basilesimon/noaastorms/raw/master/Rplot.png)
 
 ## Your feedback is important
 
-Next on the list are more complex queries and the support of date ranges. Sadly, supporting date ranges won't change how much data we need to download (the NOAA data is bulk export).
+Next on the list are more complex queries. Sadly, supporting date ranges doesn't change how much data we need to download (the NOAA data is bulk export).
 
 I maintain a [list of open issues on Github](https://github.com/basilesimon/noaastorms) and hope to capture some feature requests there.
 
