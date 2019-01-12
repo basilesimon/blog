@@ -12,7 +12,7 @@ Mapping historical storms data is now a little bit easier. [Off the back of this
 
 The National Oceanic and Atmospheric Administration releases datasets known as [International Best Track Archive for Climate Stewardship](<https://www.ncdc.noaa.gov/ibtracs/>).
 
-These datasets are updated regulary and cover our oceans since 1990.
+These datasets are updated regulary and cover all our oceans. The data found in there is fantasticly detailed and goes back as far as 1850 in some case (I wonder how!).
 
 ## How to install
 
@@ -51,7 +51,7 @@ The first argument is a vector of basin codes from this list:
 
 To get storms that took place in the Atlantic for example, run `getStorms(c('NA', 'SA'))`.
 
-The second argument is a date range to filter data with. For example:
+The second (optional) argument is a date range to filter data with. For example:
 
 ```r
 dateRange <- c(as.Date('2010-01-01'), as.Date('2012-12-31'))
