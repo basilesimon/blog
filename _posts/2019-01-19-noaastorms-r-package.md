@@ -74,7 +74,7 @@ worldmap <- clipPolys(wm,
   xlim=c(20,110),ylim=c(0, 45),
   keepExtra=TRUE)
 
-# load storms for North Indian ocean
+# load storms for the Atlantic ocean
 spStorms <- getStorms(c('NA', 'SA'))
 
 ggplot(spStorms,
