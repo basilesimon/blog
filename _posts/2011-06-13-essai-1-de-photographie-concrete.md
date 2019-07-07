@@ -1,5 +1,5 @@
 ---
-title: 'Essai #1 de photographie concrète'
+title: 'Essai #1 de photographie concrete'
 author: Basile
 layout: post
 permalink: /2011/06/essai-1-de-photographie-concrete

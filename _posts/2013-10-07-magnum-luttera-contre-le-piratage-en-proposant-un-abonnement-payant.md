@@ -10,6 +10,7 @@ tags:
   - "droit d'auteur"
   - magnum
   - magnum licence
+published: false
 ---
 <p style="text-align: center;">
   <a href="http://blog.basilesimon.fr/wp-content/uploads/Screenshot-from-2013-10-06-1410091.png"><img class="alignnone size-full wp-image-2439" alt="Screenshot from 2013-10-06 14:10:09" src="http://blog.basilesimon.fr/wp-content/uploads/Screenshot-from-2013-10-06-1410091.png" width="640" height="447" /></a>

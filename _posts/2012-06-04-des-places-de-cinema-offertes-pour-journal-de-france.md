@@ -12,6 +12,7 @@ tags:
   - cinéma
   - depardon
   - journal de france
+published: false
 ---
 On parle beaucoup de Raymond Depardon, en ce moment.
 En plus d&#8217;avoir réalisé la photo officielle de François Hollande -dont je parlerai bientôt dans ces colonnes-, son film Journal de France sort au cinéma le 13 juin.

@@ -17,6 +17,7 @@ tags:
   - samuel aranda
   - tim hetherington
   - world press photo
+published: false
 ---
 <img class="alignleft" src="http://s3-ec.buzzfed.com/static/enhanced/terminal05/2012/2/10/13/enhanced-buzz-wide-26330-1328898711-138.jpg" alt="2011" width="950" height="632" />
 

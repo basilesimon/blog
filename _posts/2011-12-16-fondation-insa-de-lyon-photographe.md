@@ -14,6 +14,7 @@ tags:
   - lyon
   - numérique
   - reportage
+published: false
 ---
 [<img class="aligncenter size-full wp-image-384" title="IMG_1835" src="{{ site.url }}/assets/IMG_1835.jpg" alt="" width="640" height="427" />][1]
 

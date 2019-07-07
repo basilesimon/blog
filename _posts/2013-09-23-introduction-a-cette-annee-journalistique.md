@@ -8,6 +8,7 @@ categories:
 tags:
   - journalisme
   - the newsroom
+published: false
 ---
 Voici la toute première chose montrée aux étudiants du master en Journalisme Mutimédia de l&#8217;Université de Westminster.  
 Autant dire que toute la salle était bouche-bée.

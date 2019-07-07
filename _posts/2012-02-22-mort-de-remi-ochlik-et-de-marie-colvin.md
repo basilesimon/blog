@@ -19,6 +19,7 @@ tags:
   - rémi ochlik
   - syrie
   - world press photo
+published: false
 ---
 <p style="text-align: center;">
   <a href="{{ site.url }}/assets/screen-2012-02-22-à-18.00.16.jpg"><img class="aligncenter  wp-image-812" title="screen- 2012-02-22 à 18.00.16" src="{{ site.url }}/assets/screen-2012-02-22-à-18.00.16.jpg" alt="" width="560" height="367" /></a>

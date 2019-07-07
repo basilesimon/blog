@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How do you bring crypto to 600 million people?
+published: false
 ---
 
 **Have you missed the news? [Whatsapp Just Switched on End-to-End Encryption for Hundreds of Millions of Users](http://www.wired.com/2014/11/whatsapp-encrypted-messaging/).**

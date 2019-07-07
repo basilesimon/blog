@@ -10,6 +10,7 @@ tags:
   - new blog
   - nouveau blog
   - streetphoto
+published: false
 ---
 <p style="text-align: center;">
   <a href="http://www.streetphoto.fr/"><img class="size-full wp-image-2465 aligncenter" alt="Screen Shot 2013-10-15 at 17.16.49" src="http://blog.basilesimon.fr/wp-content/uploads/Screen-Shot-2013-10-15-at-17.16.49.png" width="192" height="161" /></a><a href="http://www.streetphoto.fr/">http://www.streetphoto.fr/</a>

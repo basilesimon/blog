@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Staying nomad is harder than it seems
+published: false
 ---
 
 **Yes, staying nomad is harder than it seems.**

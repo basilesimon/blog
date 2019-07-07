@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Of losing touch with the audience
+published: false
 ---
 
 [You might remember](http://journalism.basilesimon.fr/2014/08/01/data-stringers/) that I was working on an open-source project called Datastringer. Even better, the project might have caught your eye on Hacker News or on Github during our launch. It had a certain success, an [Clément](http://twitter.com/5c2v) and I are very proud.

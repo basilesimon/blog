@@ -1,6 +1,7 @@
 ---
 layout: post
 title: On pervasive surveillance
+published: false
 ---
 
 Yesterday, I wanted to email a friend about a project. A *secret project,* I mean. One that could potentially harm careers and lives quite badly. So, I opened up my email client, and started writing.
