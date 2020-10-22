@@ -1,5 +1,5 @@
-# How to run
+#Blog
 
-```sh
-$ docker run -p 4000:4000 -v $(pwd):/site bretfisher/jekyll-serve
-```
+Powered by [Jekyll](http://jekyllrb.com/), assisted by [Poole](http://getpoole.com/).
+Theme: [Lanyon](https://github.com/poole/lanyon).
+*

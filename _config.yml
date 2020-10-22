@@ -1,5 +1,5 @@
 # Dependencies
-markdown:         kramdown
+markdown:         redcarpet
 highlighter:      rouge
 redcarpet: 
   extensions: ["tables"]
@@ -28,7 +28,7 @@ github:           https://github.com/basilesimon
 twitter:          https://twitter.com/basilesimon
 projects:         https://basilesimon.fr
 
-plugins:
-- jekyll-seo-tag
+gems:
+  - jekyll-seo-tag
 
 keep_files: ["assets"]
