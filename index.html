@@ -3,11 +3,28 @@ layout: default
 title: Home
 ---
 
+<h1>latest weeknotes</h1>
+
+<div>
+    {% for post in site.tags["weeknotes"] limit:5 %}
+    <h3>
+      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> <br>
+      <small> {{ post.date | date: "%B %e, %Y" }}</small>
+    </h3>
+    {% endfor %}
+</div>
+
+<hr/>
+
+<h1>blogs</h1>
+
 <div class="blog-index">
 {% for post in site.posts %}
+{% unless post.tags contains "weeknotes" %}
 <h3>
   <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> <br>
  <small> {{ post.date | date: "%B %e, %Y" }}</small>
 </h3>
+{% endunless %}
 {% endfor %}
 </div>
