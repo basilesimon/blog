@@ -3,11 +3,28 @@ layout: default
 title: Home
 ---
 
+<h1>Latest weeknotes</h1>
+<p>For the last few months I've tried to stick to publishing a weekly log of how things are going in Young Parent Trying To Make It Back In The Workplace land.</p>
+<div>
+    {% for post in site.tags["weeknotes"] limit:5 %}
+    <h3>
+      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> <br>
+      <small> {{ post.date | date: "%B %e, %Y" }}</small>
+    </h3>
+    {% endfor %}
+</div>
+
+<hr/>
+
+<h1>Actual blogs</h1>
+
 <div class="blog-index">
 {% for post in site.posts %}
+{% unless post.tags contains "weeknotes" %}
 <h3>
   <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> <br>
  <small> {{ post.date | date: "%B %e, %Y" }}</small>
 </h3>
+{% endunless %}
 {% endfor %}
 </div>
