@@ -4,7 +4,7 @@ title: "Portfolio case study: Global Witness' Pipedown interactive map"
 image: "https://blog.basilesimon.fr/assets/gw-full.png"
 ---
 
-![]({{ site.url }}/assets/gw-full.png)
+![Pipedown screenshot]({{ site.url }}/assets/gw-full.png)
 
 **An interactive map of natural gas infrastructure in the EU, built with Svelte and d3, for Global Witness.**
 
