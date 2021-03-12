@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Announcing the Digital Evidence Toolkit"
-image: ""
+description: "Funded by the Prototype Fund, the project aims to improve the standards of evidence-gathering by small groups or individuals"
+image: "https://blog.basilesimon.fr/assets/toolkit-banner.png"
 ---
 
 <img style="margin: 0 auto; width: 30%" src="https://digitalevidencetoolkit.org/logo.png">
